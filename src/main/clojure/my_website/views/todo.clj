@@ -23,3 +23,8 @@
           (todos-list [{:id "todo1" :title "Get Milk" :due "today"}
                        {:id "todo2" :title "Browse" :due "whenever"}
                        {:id "todo3" :title "Go Running" :due "today"}])))
+
+(defpage "/params" {:keys [id dir]}
+  (layout "Parameters"
+          [:p (str "id = " id)]
+          [:p (str "dir = " dir)]))
