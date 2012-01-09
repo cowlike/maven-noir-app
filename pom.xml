@@ -92,11 +92,6 @@
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>sample.noir_app.Main</mainClass>
-						</manifest>
-					</archive>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
@@ -106,28 +101,23 @@
 	</build>
 	<repositories>
 		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>ualmaven</id>
-			<name>UAL Maven Central Repository</name>
-			<url>http://dfte.ual.com/artifactory/repo/</url>
+			<id>central</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>clojure</id>
+			<url>http://build.clojure.org/releases</url>
+		</repository>
+		<repository>
+			<id>clojure-snapshots</id>
+			<url>http://build.clojure.org/snapshots</url>
+		</repository>
+		<repository>
+			<id>clojars</id>
+			<url>http://clojars.org/repo/</url>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>ualmaven</id>
-			<name>UAL Maven Central Repository</name>
-			<url>http://dfte.ual.com/artifactory/repo/</url>
-		</pluginRepository>
-	</pluginRepositories>
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.clojure</groupId>
 			<artifactId>clojure</artifactId>
@@ -147,6 +137,11 @@
 			<groupId>jetty</groupId>
 			<artifactId>org.mortbay.jetty</artifactId>
 			<version>5.1.12</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
 		</dependency>
 	</dependencies>
 </project>
