@@ -1,0 +1,3 @@
+This is a very simple webapp using Noir and Maven with clojure-maven-plugin. 
+
+The Clojure plugin is configured to work well with m2e in Eclipse (see the lifecycle configuration in the POM file). After I flesh it out a bit more, I'm going to use it as a base to create a Maven archetype for this style of app.
