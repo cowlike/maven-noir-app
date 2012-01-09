@@ -4,6 +4,11 @@
         hiccup.core
         hiccup.page-helpers))
 
+(defn layout [title & body]
+  (html
+    [:head [:title title]]
+    [:body [:h1.header title] body])) 
+
 (defpartial todo-item [{:keys [id title due]}]
     [:li {:id id} ;; maps define HTML attributes
         [:h3 title]
@@ -14,7 +19,7 @@
    (map todo-item items)])
 
 (defpage "/todo" []
-  (todos-list [{:id "todo1" :title "Get Milk" :due "today"}
-               {:id "second" :title "Browse" :due "whenever"}
-               {:id "todo3" :title "Go Running" :due "today"}]))
-
+  (layout "My Todo List" 
+          (todos-list [{:id "todo1" :title "Get Milk" :due "today"}
+                       {:id "todo2" :title "Browse" :due "whenever"}
+                       {:id "todo3" :title "Go Running" :due "today"}])))
